@@ -1,10 +1,12 @@
 <h1 align="center">Anime/Manga Quiz</h1>
-<center>
-  <img src="https://img.shields.io/badge/made_using-svelte-orange?style=for-the-badge" /> <img src="https://img.shields.io/badge/first_time-using_frameworks-blue?style=for-the-badge" />
-  <h3>
+<div align="center">
+  <img src="https://img.shields.io/badge/made_using-svelte-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/first_time-using_frameworks-blue?style=for-the-badge" />
+</div>
+
+<h3  align="center">
   Quiz App for Anime and Manga
 </h3>
-</center>
 
 
 ## How to play
