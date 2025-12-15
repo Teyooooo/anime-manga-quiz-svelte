@@ -3,20 +3,16 @@
 </script>
 
 <div>
-    <p>Your score is {$totalCorrect} out of {$total_question}</p>
+    <p class="text-body">Your score is {$totalCorrect} out of {$total_question}</p>
 </div>
 
 <style>
   div {
-    width: 20rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+    width: 18rem;
     padding: 20px;
   }
 
   p{
-    margin: 30vh auto 0;
     padding: 0;
     font-size: 2rem;
     text-align: center;

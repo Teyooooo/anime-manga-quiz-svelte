@@ -2,7 +2,7 @@
   import { total_question, difficulty, isItStarted } from "./store.js";
 </script>
 
-<div class="card mt-5 mx-auto" style="width: 25rem;">
+<div class="card" style="width: 22rem;">
   <div class="card-header">
     <p class="fs-4 fw-semibold m-0">Select Difficulty</p>
   </div>

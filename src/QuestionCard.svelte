@@ -6,6 +6,7 @@
   let choices_answers;
   let result = false;
   let wasAnswered = false;
+  let selectedAnswer;
 
   $: if (data) {
     correct_answer = data?.correct_answer;
@@ -13,13 +14,14 @@
 
     result = false;
     wasAnswered = false;
-
+    selectedAnswer = null
     randomizeChoices(choices_answers);
     console.log({ choices_answers });
   }
 
   function checkAnswer(answer) {
     wasAnswered = true;
+    selectedAnswer = answer
     result = correct_answer === answer;
 
     if (result) {
@@ -28,7 +30,6 @@
 
     setTimeout(() => {
       $currentQuestionIndex++;
-      e.target.blur();
     }, 1500);
   }
 
@@ -37,7 +38,7 @@
   }
 </script>
 
-<div class="card mt-5 mx-auto p-2" style="width: 25rem;">
+<div class="card p-2" style="width: 22rem;">
 
   <p class="fs-4 fw-semibold m-0 mb-4">{@html data?.question}</p>
 
@@ -51,8 +52,19 @@
     {/if}
   {/if}
 
-  {#each choices_answers as answer}
-    <button class="btn btn-outline-secondary" on:click={(e) => {checkAnswer(answer, e);}}>{@html answer}</button>
-  {/each}
-</div>
+  {#key data?.question}
+    {#each choices_answers as answer}
+      <button
+        class="btn m-1
+          {selectedAnswer === answer
+            ? result ? 'btn-success' : 'btn-danger'
+            : 'btn-outline-secondary'}"
+        disabled={wasAnswered}
+        on:click={(e) => {e.target.blur(); checkAnswer(answer);}}
+      >
+        {@html answer}
+      </button>
+    {/each}
+  {/key}
 
+</div>

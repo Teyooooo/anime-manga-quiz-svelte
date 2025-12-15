@@ -2,7 +2,7 @@
     import {total_question, currentQuestionIndex, totalCorrect, difficulty} from "./store.js"
 </script>
 
-<div>
+<div class="text-body">
     <p>Difficulty: {$difficulty}</p>
     <p>{$currentQuestionIndex + 1}/{$total_question}</p>
     <p>Score: {$totalCorrect}</p>

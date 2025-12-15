@@ -5,3 +5,4 @@
   export let isItStarted = writable(false);
   export let currentQuestionIndex = writable(0)
   export let totalCorrect = writable(0)
+  export let darkMode = writable(true);
